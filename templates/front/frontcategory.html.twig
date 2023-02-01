@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Les catégories</title>
+</head>
+<body>
+    <h1>Categories</h1>
+    <ul>
+        {% for categories in category %}
+            <li><a href="{{ path('front_dishes_category', {'id': categories.id}) }}">{{ categories.name }} {{ counts[categories.id] }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

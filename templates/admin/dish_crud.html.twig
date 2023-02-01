@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Les 3 derniers plats insérés</h1>
+            <a href="/admin/dish/new">Ajouter un nouveau plat</a>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for dish in dishes %}
+                    <tr>
+                        <td>{{ dish.name }}</td>
+                        <td>{{ dish.description }}</td>
+                        <td>{{ dish.price }}€</td>
+                        <td colspan="3">
+                            <a href="/admin/dish/{{ dish.id }}/details">Voir</a>
+                            <a href="/admin/dish/{{ dish.id }}/edit">Modifier</a>
+                            <a href="/admin/dish/{{ dish.id }}/delete">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

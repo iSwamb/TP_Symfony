@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        {{ form_start(form) }}
+        <table>
+            <tbody>
+            <tr>
+                <th>Nom du plat :</th>
+                <td>{{ form_widget(form.name) }}</td>
+            </tr>
+            <tr>
+                <th>Description du plat :</th>
+                <td>{{ form_widget(form.description) }}</td>
+            </tr>
+            <tr>
+                <th>Calories dans le plat :</th>
+                <td>
+                    <select name="calories">
+                        {% for i in 0..30 %}
+                            {% set calorie = 10*(i+1) %}
+                            <option value="{{ calorie }}">{{ calorie }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Image du plat : </th>
+                <td>{{ form_widget(form.image) }}</td>
+            </tr>
+            <tr>
+                <th>Sticky du plat : </th>
+                <td>{{ form_widget(form.sticky) }}</td>
+            </tr>
+            <tr>
+                <th>Price du plat : </th>
+                <td>{{ form_widget(form.price) }}</td>
+            </tr>
+            <tr>
+                <th>Catégorie du plat : </th>
+                <td>{{ form_widget(form.category) }}</td>
+            </tr>
+            <tr>
+                <th>Allergènes du plat : </th>
+                <td>{{ form_widget(form.allergens) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_widget(form.save) }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        {{ form_end(form) }}
+    </div>
+</div>
+</body>
+</html>

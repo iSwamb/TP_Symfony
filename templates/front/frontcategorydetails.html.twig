@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Les détails des catégories</title>
+</head>
+<body>
+    <div>
+        <h1>Détails de la catégorie : {{ categorie.name }}</h1>
+        <p>Voici, ci-dessous la liste des plats disponibles dans la catégorie : </p>
+
+        {% for dish in dishes %}
+        <ul>
+            <li><strong>Nom du plat :</strong> {{ dish.name }}</li>
+            <li><strong>Prix du plat :</strong> {{ dish.price }} euros</li>
+            <li><strong>Calories du plat :</strong> {{ dish.calories }}</li>
+            <li><strong>Allergènes :</strong></li>
+        </ul>
+        {% endfor %}
+
+        <a href="{{ path('front_dishes') }}">Retour</a>
+
+    </div>
+</body>
+</html>

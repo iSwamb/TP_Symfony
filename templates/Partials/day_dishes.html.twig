@@ -1,0 +1,26 @@
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Les 3 derniers plats insérés</h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for dish in dishes %}
+                    <tr>
+                        <td>{{ dish.name }}</td>
+                        <td>{{ dish.description }}</td>
+                        <td>{{ dish.price }}€</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

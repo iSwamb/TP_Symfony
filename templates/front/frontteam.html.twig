@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <head>
+        <title>
+            Team members
+        </title>
+    </head>
+    <p>Bienvenue sur la page de présentation de l'équipe de notre restaurant. Vous trouverez ci-dessous toutes les infos
+        de l'équipe :)</p>
+
+    <table>
+        <tr>
+            <td><b>Nom</b></td>
+            <td><b>Prénom</b></td>
+            <td><b>Email</b></td>
+            <td><b>Métier</b></td>
+        </tr>
+        {% for equipes in equipe %}
+            <tr>
+                <td>{{ equipes.lastname }}</td>
+                <td>{{ equipes.firstname }}</td>
+                <td>{{ equipes.email }}</td>
+                <td>{{ equipes.jobtitle }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br><a href="{{ link('/', 'http://127.0.0.1:8000') }}">Retour sur la page d'accueil</a>
+{% endblock %}
