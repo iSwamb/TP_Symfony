@@ -20,14 +20,7 @@
             </tr>
             <tr>
                 <th>Calories dans le plat :</th>
-                <td>
-                    <select name="calories">
-                        {% for i in 0..30 %}
-                            {% set calorie = 10*(i+1) %}
-                            <option value="{{ calorie }}">{{ calorie }}</option>
-                        {% endfor %}
-                    </select>
-                </td>
+                <td>{{ form_widget(form.calories) }}</td>
             </tr>
             <tr>
                 <th>Image du plat : </th>

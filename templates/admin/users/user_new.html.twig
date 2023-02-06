@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .hidden-row {
+        display: none;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        {{ form_start(form) }}
+        <table>
+            <tbody>
+            <tr>
+                <th>Nom de l'utilisateur :</th>
+                <td>{{ form_widget(form.username) }}</td>
+            </tr>
+            <tr>
+                <th>Email de l'utilisateur :</th>
+                <td>{{ form_widget(form.email) }}</td>
+            </tr>
+            <tr>
+                <th>Prénom de l'utilisateur :</th>
+                <td>{{ form_widget(form.firstname) }}</td>
+            </tr>
+            <tr>
+                <th>Nom de l'utilisateur : </th>
+                <td>{{ form_widget(form.lastname) }}</td>
+            </tr>
+            <tr>
+                <th>Titre du job de l'utilisateur : </th>
+                <td>{{ form_widget(form.jobtitle) }}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>{{ form_widget(form.enabled, { 'attr': { 'class': 'hidden-row'} }) }}</td>
+                <td>{{ form_widget(form.createdat, { 'attr': { 'class': 'hidden-row'} }) }}</td>
+                <td>{{ form_widget(form.updatedat, { 'attr': { 'class': 'hidden-row'} }) }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        {{ form_end(form) }}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Liste des catégories</h1>
+            <a href="/admin/category/new">Ajouter une nouvelle catégorie</a>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nom de la catégorie</th>
+                    <th>Image de la catégorie</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for category in categories %}
+                    <tr>
+                        <td>{{ category.name }}</td>
+                        <td>{{ category.image }}</td>
+                        <td colspan="3">
+                            <a href="/admin/category/{{ category.id }}/details">Voir</a>
+                            <a href="/admin/category/{{ category.id }}/edit">Modifier</a>
+                            <a href="/admin/category/{{ category.id }}/delete">Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
